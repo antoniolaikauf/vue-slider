@@ -34,8 +34,7 @@ const {createApp} = Vue;
 createApp({
     data(){
         return{
-                upgadre:0,
-                clas:"active",
+                upgrade:0,
                 slides: [
                     {
                         image: 'img/01.webp',
@@ -67,20 +66,22 @@ createApp({
         }
     },
     methods:{
+    // funzione per far andare avanti upgadre
         avanti(){
-            this.upgadre++
-            if (this.upgadre > this.slides.length-1) {
-                this.upgadre=0
+            this.upgrade++
+            if (this.upgrade > this.slides.length-1) {
+                this.upgrade=0
             }
 
-            // console.log(this.upgadre);
+            // console.log(this.upgrade);
         },
+        // funzione per far andare indietro upgrade
         indietro(){
-            this.upgadre--
-            if (this.upgadre < 0) {
-                this.upgadre=this.slides.length -1
+            this.upgrade--
+            if (this.upgrade < 0) {
+                this.upgrade=this.slides.length -1
             }
-            // console.log(this.upgadre);
+            // console.log(this.upgrade);
         }
     }
 

@@ -19,21 +19,24 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img :src="slides[upgadre].image" alt="">
-                    <!-- <img src="img/01.webp" alt="Spiderman" /> -->
+                <!-- inserimento immagine da javascript -->
+                    <img :src="slides[upgrade].image" alt="immagine ">
+
                     <div class="text">
-                        <h3>{{slides[upgadre].title}}</h3>
+                    <!-- inserimento testo da javascript -->
+                        <h3>{{slides[upgrade].title}}</h3>
                         <p>
-                            {{slides[upgadre].text}}
+                            {{slides[upgrade].text}}
                         </p>
                     </div>
                 </div>
 
                 <div class="thumbs">
+                <!-- bottoni per far andare avanti l'immagine -->
                     <div class="prev"  @click="indietro"></div>
                     <div class="next"  @click="avanti"></div>
-
-                    <div v-for="(card, i) in slides"  :key="i"  class="thumb">
+                <!-- immagini inserite da javascript -->
+                    <div v-for="(card, i) in slides"  :key="i"  class="thumb" :class="upgrade === i ? `active`: `` ">
                         <img :src="card.image" alt="i">
                     </div>
 
@@ -43,6 +46,8 @@
         </div>
 
     </div>
+
+    `"upgadre === i ? active: ""`
 
 
     <script src="./js/script.js"></script>
