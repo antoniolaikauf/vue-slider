@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+
+        <div class="container">
+            <div class="slider-wrapper" tabindex="0">
+
+                <div class="item">
+                <!-- inserimento immagine da javascript -->
+                    <img :src="slides[upgrade].image" alt="immagine ">
+
+                    <div class="text">
+                    <!-- inserimento testo da javascript -->
+                        <h3>{{slides[upgrade].title}}</h3>
+                        <p>
+                            {{slides[upgrade].text}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="thumbs">
+                <!-- bottoni per far andare avanti l'immagine -->
+                    <div class="prev"  @click="indietro"></div>
+                    <div class="next"  @click="avanti"></div>
+                <!-- immagini inserite da javascript -->
+                    <div v-for="(card, i) in slides"  :key="i"  class="thumb" :class="upgrade === i ? `active`: `` ">
+                        <img :src="card.image" alt="i">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
