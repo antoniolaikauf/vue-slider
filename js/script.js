@@ -70,12 +70,17 @@ createApp({
     methods:{
         avanti(){
             this.upgadre++
+            if (this.upgadre > this.slides.length-1) {
+                this.upgadre=0
+            }
 
             // console.log(this.upgadre);
         },
         indietro(){
             this.upgadre--
-
+            if (this.upgadre < 0) {
+                this.upgadre=this.slides.length -1
+            }
         }
     }
 
