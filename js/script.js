@@ -35,6 +35,7 @@ createApp({
     data(){
         return{
                 upgrade:0,
+                clas :"active",
                 slides: [
                     {
                         image: 'img/01.webp',
