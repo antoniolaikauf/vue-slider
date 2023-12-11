@@ -35,7 +35,6 @@ createApp({
     data(){
         return{
                 upgrade:0,
-                clas :"active",
                 slides: [
                     {
                         image: 'img/01.webp',
@@ -72,8 +71,7 @@ createApp({
             this.upgrade++
             if (this.upgrade > this.slides.length-1) {
                 this.upgrade=0
-            }
-
+            } 
             // console.log(this.upgrade);
         },
         // funzione per far andare indietro upgrade
@@ -83,7 +81,21 @@ createApp({
                 this.upgrade=this.slides.length -1
             }
             // console.log(this.upgrade);
+        },
+        // aggiunto evento automatico
+        automatico(){
+            setInterval(() => {
+                   this.upgrade++
+                    if (this.upgrade > this.slides.length-1) {
+                        this.upgrade=0
+                    } 
+            }, 3000);
         }
     }
 
 }).mount("#app")
+
+
+window.addEventListener("click",function () {
+    
+})

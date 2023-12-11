@@ -8,19 +8,18 @@
     <title>Slider</title>
     <link rel="stylesheet" href="./css/style.css" />
 </head>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <body>
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
     <div id="app">
 
-        <div class="container">
+        <div class="container" >
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
                 <!-- inserimento immagine da javascript -->
-                    <img :src="slides[upgrade].image" alt="immagine ">
+                    <img :src="slides[upgrade].image" alt="immagine " @click="automatico">
 
                     <div class="text">
                     <!-- inserimento testo da javascript -->
@@ -36,10 +35,9 @@
                     <div class="prev"  @click="indietro"></div>
                     <div class="next"  @click="avanti"></div>
                 <!-- immagini inserite da javascript -->
-                    <div v-for="(card, i) in slides"  :key="i"  class="thumb" :class="upgrade === i ? `active`: `` ">
+                    <div v-for="(card, i) in slides"  :key="i"  class="thumb" :class="upgrade === i ? `active`: `` " @click="attuale">
                         <img :src="card.image" alt="i">
                     </div>
-
                 </div>
 
             </div>
@@ -50,3 +48,13 @@
 </body>
 
 </html>
+
+
+<img :src="slides[upgrade].image" alt="immagine ">
+<div class="text">
+                    <!-- inserimento testo da javascript -->
+    <h3>{{slides[upgrade].title}}</h3>
+    <p>
+         {{slides[upgrade].text}}
+     </p>
+</div>
