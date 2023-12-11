@@ -69,6 +69,7 @@ createApp({
                         this.upgrade=0
                     } 
                 }, 3000),
+
                
         }
     },
@@ -93,7 +94,3 @@ createApp({
 
 }).mount("#app")
 
-
-window.addEventListener("click",function () {
-    
-})
