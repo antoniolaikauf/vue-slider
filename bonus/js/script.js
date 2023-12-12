@@ -94,3 +94,5 @@ createApp({
 
 }).mount("#app")
 
+// bisognava mettere l'autoplay dentro una funzione dentro methods e mettere la funzione dentro mounted
+
